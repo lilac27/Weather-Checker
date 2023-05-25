@@ -89,7 +89,7 @@ async function fetchWeatherForecast(city) {
       const temperature = Math.round((forecast.main.temp - 273.15) * 9/5 + 32); // Convert temperature from Kelvin to Celsius
       const wind = forecast.wind.speed;
       const humidity = forecast.main.humidity;
-    const icon = forecast.weather[0].icon
+      const icon = forecast.weather[0].icon
 
 
       forecastItem.innerHTML = `

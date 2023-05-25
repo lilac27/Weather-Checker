@@ -15,6 +15,7 @@
 #historyContainer {
     display: flex;
     flex-direction: column;
+    margin-left: -70px;
 }
 
 .forecast-list {
@@ -23,7 +24,16 @@
     justify-content: space-between;
 }
 
-#currentWeather {
+.container {
     display: flex;
-  
+    justify-content: space-between;
+}
+.weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#weather-forecast {
+    justify-content: space-between;
 }
