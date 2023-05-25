@@ -18,4 +18,6 @@ The finished site utilizes bootstrap for styling and the Openweather API for wea
 
 https://lilac27.github.io/Weather-Checker/
 
-![](images/Weather-Checker.png)
+![](images/Weather-Checker%20pic.png)
+
+
