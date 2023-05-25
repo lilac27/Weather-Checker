@@ -31,6 +31,7 @@ async function fetchWeatherForecast(city) {
   // Function to display weather forecast
   function displayWeatherForecast(data, days) {
     const forecastContainer = document.getElementById('weather-forecast');
+    const currentWeather = document.getElementById('current-weather')
     // Clear previous forecast data
     forecastContainer.innerHTML = '';
   
@@ -41,9 +42,12 @@ async function fetchWeatherForecast(city) {
     // Create HTML elements to display the forecast information
     const heading = document.createElement('h2');
     heading.textContent = `Weather Forecast for ${city}`;
-    forecastContainer.appendChild(heading);
+    currentWeather.appendChild(heading);
   
     const forecastListContainer = document.createElement('ul');
+    const heading2 = document.createElement('h2');
+    heading2.textContent = 'Five day Forecast';
+    forecastContainer.appendChild(heading2);
     forecastListContainer.classList.add('forecast-list');
     forecastContainer.appendChild(forecastListContainer);
   
