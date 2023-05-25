@@ -1,0 +1,8 @@
+.header {
+    display: flex;
+    background-color: blue;
+    color: white;
+    font-size: 30px;
+    justify-content: right;
+    padding-right: 50px;
+}
