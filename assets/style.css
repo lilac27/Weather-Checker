@@ -22,3 +22,8 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+#currentWeather {
+    display: flex;
+  
+}

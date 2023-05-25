@@ -34,15 +34,42 @@ async function fetchWeatherForecast(city) {
     const currentWeather = document.getElementById('current-weather')
     // Clear previous forecast data
     forecastContainer.innerHTML = '';
+    currentWeather.innerHTML = '';
   
     // Extract necessary information from the data
     const city = data.city.name;
+    const currentForecast =days.shift();
     const forecastList = days;
   
     // Create HTML elements to display the forecast information
     const heading = document.createElement('h2');
     heading.textContent = `Weather Forecast for ${city}`;
     currentWeather.appendChild(heading);
+
+    const currentForecastItem = document.createElement('div');
+    currentForecastItem.classList.add('current-forecast-item');
+
+    const currentForecastDate = new Date(currentForecast.dt_txt);
+    const currentForecastDateString = currentForecastDate.toLocaleDateString(undefined, {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric'
+    });
+
+    const currentTemperature = Math.round((currentForecast.main.temp - 273.15) * 9/5 + 32); // Convert temperature from Kelvin to Celsius
+    const currentWind = currentForecast.wind.speed;
+    const currentHumidity = currentForecast.main.humidity;
+    const currentIcon = currentForecast.weather[0].icon;
+  
+    currentForecastItem.innerHTML = `
+      <p>Date: ${currentForecastDateString}</p>
+      <img class="icon" src="https://openweathermap.org/img/wn/${currentIcon}@2x.png"/>
+      <p>Temperature: ${currentTemperature} °F</p>
+      <p>Wind: ${currentWind} m/s</p>
+      <p>Humidity: ${currentHumidity}%</p>
+    `;
+  
+    currentWeather.appendChild(currentForecastItem);
   
     const forecastListContainer = document.createElement('ul');
     const heading2 = document.createElement('h2');
