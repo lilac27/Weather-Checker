@@ -16,3 +16,6 @@ THEN I am again presented with current and future conditions for that city
 ## Finished Result  
 The finished site utilizes bootstrap for styling and the Openweather API for weather data.
 
+https://lilac27.github.io/Weather-Checker/
+
+![](images/Weather-Checker.png)
