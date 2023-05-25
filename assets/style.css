@@ -6,3 +6,8 @@
     justify-content: right;
     padding-right: 50px;
 }
+
+.icon {
+    height: 70px;
+    width: 70px;
+}
