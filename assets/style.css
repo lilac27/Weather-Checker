@@ -11,3 +11,14 @@
     height: 70px;
     width: 70px;
 }
+
+#historyContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.forecast-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

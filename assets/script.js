@@ -72,11 +72,7 @@ async function fetchWeatherForecast(city) {
       forecastListContainer.appendChild(forecastItem);
     });
   
-    // Uncomment the following code if you still want to display the raw forecast data as JSON
-    /*
-    const forecastJSON = JSON.stringify(data, null, 2);
-    forecastContainer.innerText = forecastJSON;
-    */
+
   }
   
   // Function to handle search button click
