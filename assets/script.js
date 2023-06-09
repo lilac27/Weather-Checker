@@ -117,18 +117,29 @@ async function fetchWeatherForecast(city) {
       fetchWeatherForecast(city)
         searchHistory.push(city)
         localStorage.setItem("cityHistory", JSON.stringify(searchHistory))
-    }
+        generateHistoryButtons();
+      }
 }
+
+function generateHistoryButtons() {
+  const historyContainer = document.getElementById('historyContainer');
+  historyContainer.innerHTML = '';
+
+  searchHistory.forEach(city => {
+    const historyButton = document.createElement('button');
+    historyButton.textContent = city;
+    historyButton.addEventListener('click', function () {
+      fetchWeatherForecast(city);
+    })
+    historyContainer.appendChild(historyButton);
+  });
+}
+
 if (searchHistory.length>0){
-for (var i=0; i<searchHistory.length; i++){
-    const historyButton = document.createElement("button")
-    historyButton.textContent = searchHistory[i]
-    document.querySelector("#historyContainer").appendChild(historyButton)
-}
+generateHistoryButtons ();
 }
 document.querySelector("#city-search").addEventListener("click", handleSearch);
 document.querySelector("#historyContainer").addEventListener("click", function(event){
-console.log(event.target.textContent)
 const city = event.target.textContent
 fetchWeatherForecast(city)
-})
+});
